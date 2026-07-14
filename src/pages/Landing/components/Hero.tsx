@@ -25,7 +25,7 @@ export function Hero() {
   return (
     <div className="w-full relative overflow-hidden">
       <div className="container mx-auto">
-        <div className="flex gap-8 py-20 lg:py-32 items-center justify-center flex-col relative z-10">
+        <div className="flex gap-8 pt-20 lg:pt-32 pb-20 lg:pb-32 items-center justify-center flex-col relative z-10">
           <div>
             <Button
               size="sm"
