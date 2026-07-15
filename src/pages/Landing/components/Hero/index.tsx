@@ -2,38 +2,25 @@ import { ArrowRight, ChevronRight, Upload } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
-if (typeof document !== "undefined") {
-  const s = document.createElement("style");
-  s.textContent = `
-    @keyframes typing { from { width: 0 } to { width: 100% } }
-    @keyframes blink { 50% { border-color: transparent } }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-    .tl { display: inline-block; overflow: hidden; white-space: nowrap; width: 0; animation: typing var(--d,1.5s) steps(30,end) forwards; animation-delay: var(--delay,0s); }
-    .tl::after { content: " "; animation: blink .7s step-end infinite; margin-left: 2px; color: #8b5cf6; font-weight: bold; }
-    .tl-done::after { content: none; }
-  `;
-  document.head.appendChild(s);
-  document.querySelectorAll(".tl").forEach((el) => {
-    el.addEventListener("animationend", () => el.classList.add("tl-done"), { once: true });
-  });
-}
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
-};
-
-const slideLeft = {
-  hidden: { opacity: 0, x: -30 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
-};
+import { fadeUp, slideLeft } from "./constants";
+import styles from "./index.module.css";
 
 export function Hero() {
   const { t } = useTranslation();
   const [inputVal, setInputVal] = useState("");
+
+  useEffect(() => {
+    const handleEnd = (e: AnimationEvent) => {
+      (e.currentTarget as HTMLElement).classList.add(styles.typingLineDone);
+    };
+    const els = document.querySelectorAll(`.${styles.typingLine}`);
+    els.forEach((el) => el.addEventListener("animationend", handleEnd as EventListener, { once: true }));
+    return () => {
+      els.forEach((el) => el.removeEventListener("animationend", handleEnd as EventListener));
+    };
+  }, []);
 
   return (
     <div className="w-full relative overflow-hidden">
@@ -51,12 +38,15 @@ export function Hero() {
         <div className="flex gap-4 flex-col max-w-4xl mx-auto">
           <h1 className="scroll-m-20 text-center text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-balance">
             <span className="block">
-              <span className="tl" style={{ "--d": "1.5s" } as React.CSSProperties}>
+              <span
+                className={styles.typingLine}
+                style={{ "--d": "1.5s" } as React.CSSProperties}
+              >
                 {t("landing:hero_line1")}
               </span>
             </span>
             <span
-              className="block tl mt-3 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"
+              className={`block mt-3 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent ${styles.typingLine}`}
               style={{ "--d": "1.5s", "--delay": "1.5s" } as React.CSSProperties}
             >
               {t("landing:hero_line2")}

@@ -20,5 +20,20 @@
   "peek_subtitle": "一个工作台搞定简历解析、优化、匹配和面试准备",
   "stats_active_users": "活跃用户",
   "stats_satisfaction": "用户满意度",
-  "stats_interview_boost": "面试邀约提升"
+  "stats_interview_boost": "面试邀约提升",
+  "features_badge": "全功能覆盖",
+  "features_title": "求职全链路，一站搞定",
+  "features_desc": "从简历导入到拿到 Offer，ResuMuse 覆盖每一个关键节点，让 AI 成为你的私人职业顾问",
+  "feature_parse_title": "智能简历解析",
+  "feature_parse_desc": "上传 PDF / Word，AI 自动结构化提取所有内容，识别经历、技能、教育，秒级完成，准确率 99.2%。",
+  "feature_editor_title": "AI 驱动编辑器",
+  "feature_editor_desc": "Monaco 级内容编辑器，AI 实时给出优化建议，帮你把每个 Bullet 改得更有冲击力、更数据化。",
+  "feature_chat_title": "简历专属 AI 对话",
+  "feature_chat_desc": "围绕你的简历多轮问答，每条建议都有原文引用，不是泛泛而谈，而是深度理解你的职业背景。",
+  "feature_match_title": "JD 精准匹配分析",
+  "feature_match_desc": "粘贴任意 JD，AI 输出匹配度评分 + 雷达图 + 差距分析 + 优先级改写建议，告诉你改哪里最值。",
+  "feature_interview_title": "面试题智能生成",
+  "feature_interview_desc": "基于你的真实简历，生成行为题、产品题、策略题、技术题，并给出有据可查的参考回答。",
+  "feature_version_title": "多版本管理",
+  "feature_version_desc": "为不同岗位保存多个简历变体，查看任意两版之间的 Diff，随时回溯，投递不同赛道更自信。"
 }

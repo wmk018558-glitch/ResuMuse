@@ -20,5 +20,20 @@
   "peek_subtitle": "One workspace for resume parsing, optimization, matching and interview prep",
   "stats_active_users": "Active Users",
   "stats_satisfaction": "Satisfaction",
-  "stats_interview_boost": "Interview Boost"
+  "stats_interview_boost": "Interview Boost",
+  "features_badge": "Full Coverage",
+  "features_title": "All-in-one job search workflow",
+  "features_desc": "From resume import to offer in hand, ResuMuse covers every key milestone. Let AI be your personal career advisor.",
+  "feature_parse_title": "Smart Resume Parsing",
+  "feature_parse_desc": "Upload PDF / Word, AI auto-extracts all content, identifies experience, skills, education — done in seconds with 99.2% accuracy.",
+  "feature_editor_title": "AI-Powered Editor",
+  "feature_editor_desc": "Monaco-level content editor with real-time AI suggestions to make every bullet more impactful and data-driven.",
+  "feature_chat_title": "Resume AI Chat",
+  "feature_chat_desc": "Multi-turn Q&A about your resume with source citations — not generic advice, but deep understanding of your career background.",
+  "feature_match_title": "JD Match Analysis",
+  "feature_match_desc": "Paste any JD, get match score + radar chart + gap analysis + prioritized rewrite suggestions — know exactly what to improve.",
+  "feature_interview_title": "Interview Questions Generator",
+  "feature_interview_desc": "Generate behavioral, product, strategy, and technical questions from your actual resume, with well-sourced reference answers.",
+  "feature_version_title": "Multi-Version Management",
+  "feature_version_desc": "Save multiple resume variants for different roles, diff any two versions, roll back anytime — apply with confidence."
 }
