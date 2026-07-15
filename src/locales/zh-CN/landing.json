@@ -13,5 +13,12 @@
   "section_templates": "模板",
   "section_pricing": "定价",
   "section_faq": "常见问题",
-  "features_placeholder": "这里是功能区域"
+  "features_placeholder": "这里是功能区域",
+  "hero_input_placeholder": "上传你的简历，让 AI 帮你找到最匹配的机会...",
+  "hero_supported_formats": "支持 PDF · Word · LinkedIn 导出 · 无需注册即可体验",
+  "peek_title": "看看 ResuMuse 长什么样",
+  "peek_subtitle": "一个工作台搞定简历解析、优化、匹配和面试准备",
+  "stats_active_users": "活跃用户",
+  "stats_satisfaction": "用户满意度",
+  "stats_interview_boost": "面试邀约提升"
 }

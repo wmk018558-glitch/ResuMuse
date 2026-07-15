@@ -13,7 +13,7 @@ export function LocaleToggle() {
   return (
     <button
       onClick={toggle}
-      className="flex items-center justify-center px-6 w-8 h-8  rounded-md border border-input bg-background font-mono italic text-[10px] hover:bg-accent transition-colors"
+      className="flex items-center justify-center px-6 w-8 h-8  rounded-md border-0 border-input bg-background font-mono italic text-[10px] hover:bg-accent transition-colors"
       title={t(isZh ? "common:switch_to_en" : "common:switch_to_zh")}
     >
       <span

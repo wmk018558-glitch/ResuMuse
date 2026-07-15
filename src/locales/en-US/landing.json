@@ -1,7 +1,7 @@
 {
   "badge": "New Upgrade · AI-Powered Resume",
   "hero_cta": "Get Started",
-  "hero_desc": "AI-driven full-chain job hunting platform · Resume parsing · Smart optimization · Job matching · Interview preparation From upload to Offer, one workspace to get it done",
+  "hero_desc": "AI-powered job hunting platform · Resume parsing · Smart optimization · Job matching · Interview prep. From upload to offer, one workspace to get it done.",
   "hero_line1": "Every resume,",
   "hero_line2": "deserves to be seen precisely",
   "nav_features": "Features",
@@ -13,5 +13,12 @@
   "section_how_it_works": "How It Works",
   "section_pricing": "Pricing",
   "section_templates": "Templates",
-  "features_placeholder": "This is the features area"
+  "features_placeholder": "This is the features area",
+  "hero_input_placeholder": "Upload your resume, let AI find the best match...",
+  "hero_supported_formats": "Supports PDF · Word · LinkedIn export · No registration needed",
+  "peek_title": "See ResuMuse in Action",
+  "peek_subtitle": "One workspace for resume parsing, optimization, matching and interview prep",
+  "stats_active_users": "Active Users",
+  "stats_satisfaction": "Satisfaction",
+  "stats_interview_boost": "Interview Boost"
 }
