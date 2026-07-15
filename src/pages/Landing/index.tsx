@@ -4,6 +4,7 @@ import { StatsBar } from "./components/StatsBar";
 import { AppPeek } from "./components/AppPeek";
 import { FeatureGrid } from "./components/FeatureGrid";
 import { Step } from "./components/Step";
+import { Testimonials } from "./components/Testimonials";
 export default function LandingPage() {
   const { t } = useTranslation();
 
@@ -16,17 +17,7 @@ export default function LandingPage() {
 
       <Step />
 
-      {/* Templates Section */}
-      <section id="templates" className="py-20">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            {t("landing:section_templates")}
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* 模板卡片 */}
-          </div>
-        </div>
-      </section>
+      <Testimonials />
 
       {/* Pricing Section */}
       <section id="pricing" className="py-20 bg-muted/50">
