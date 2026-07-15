@@ -1,7 +1,10 @@
 import { MoveRight, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
+  const { t } = useTranslation();
+
   if (typeof document !== "undefined") {
     const s = document.createElement("style");
     s.textContent = `
@@ -14,7 +17,6 @@ export function Hero() {
     `;
     document.head.appendChild(s);
 
-    // Remove cursor after each typing line finishes
     document.querySelectorAll(".tl").forEach((el) => {
       el.addEventListener("animationend", () => el.classList.add("tl-done"), {
         once: true,
@@ -33,7 +35,7 @@ export function Hero() {
               variant="outline"
             >
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-500 mr-1.5" />
-              <p className="leading-7 text-[12px]  ">全新升级 · AI 智能简历</p>
+              <p className="leading-7 text-[12px]">{t("landing:badge")}</p>
             </Button>
           </div>
           <div className="flex gap-4 flex-col">
@@ -43,18 +45,16 @@ export function Hero() {
                   className="tl"
                   style={{ "--d": "1.5s" } as React.CSSProperties}
                 >
-                  每一份简历，
+                  {t("landing:hero_line1")}
                 </span>
               </span>
               <span
-                className="block  tl mt-3 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"
+                className="block tl mt-3 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"
                 style={
                   { "--d": "1.5s", "--delay": "1.5s" } as React.CSSProperties
                 }
               >
-                {/* <span className="tl" style={{ "--d": "1.5s", "--delay": "1.5s" } as React.CSSProperties}> */}
-                都值得被精准看见
-                {/* </span> */}
+                {t("landing:hero_line2")}
               </span>
             </h1>
             <p
@@ -66,8 +66,7 @@ export function Hero() {
                 } as React.CSSProperties
               }
             >
-              AI 驱动的求职全链路平台 · 简历解析 · 智能优化 · 岗位匹配 ·
-              面试准备 从上传到拿到 Offer，一个工作台搞定
+              {t("landing:hero_desc")}
             </p>
           </div>
           <div
@@ -83,7 +82,7 @@ export function Hero() {
               size="lg"
               className="gap-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-600 hover:to-blue-600 shadow-lg"
             >
-              Get Started
+              {t("landing:hero_cta")}
               <ArrowRight />
             </Button>
           </div>

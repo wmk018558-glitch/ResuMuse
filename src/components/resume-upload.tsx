@@ -1,10 +1,20 @@
 import { useState, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Upload, File, X, CheckCircle } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+function SparklesIcon() {
+  return (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3v4m0 14v-4m-7-7h4m10 0h-4m-6.5 2.5L5.5 5.5m13 13-3-3m-7 0-3 3m13-13-3 3" />
+    </svg>
+  )
+}
+
 export function ResumeUpload() {
+  const { t } = useTranslation()
   const [dragOver, setDragOver] = useState(false)
   const [file, setFile] = useState<File | null>(null)
 
@@ -43,10 +53,10 @@ export function ResumeUpload() {
             </div>
             <div className="text-center">
               <p className="text-base font-medium">
-                点击上传或拖拽简历文件到这里
+                {t("upload:drag_hint")}
               </p>
               <p className="text-sm text-muted-foreground mt-1">
-                支持 PDF、Word、HTML 格式
+                {t("upload:supported_formats")}
               </p>
             </div>
             <input
@@ -79,19 +89,11 @@ export function ResumeUpload() {
           <div className="mt-4 flex justify-center">
             <Button className="gap-2">
               <SparklesIcon />
-              开始智能解析
+              {t("upload:start_parsing")}
             </Button>
           </div>
         )}
       </CardContent>
     </Card>
-  )
-}
-
-function SparklesIcon() {
-  return (
-    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 3v4m0 14v-4m-7-7h4m10 0h-4m-6.5 2.5L5.5 5.5m13 13-3-3m-7 0-3 3m13-13-3 3" />
-    </svg>
   )
 }
