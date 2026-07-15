@@ -1,12 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { Sparkles, FileText, FolderKanban, MessageSquare } from "lucide-react";
-const navItems = [
-  { icon: Sparkles, key: "smart_generate" },
-  { icon: FileText, key: "templates" },
-  { icon: FolderKanban, key: "my_resumes" },
-  { icon: MessageSquare, key: "ai_chat" },
-];
+import { Sparkles } from "lucide-react";
+import { NAV_ITEMS } from "./constants";
+
 export function AppPeek() {
   const { t } = useTranslation();
   return (
@@ -43,7 +39,7 @@ export function AppPeek() {
                     {t("sidebar:workspace_title")}
                   </span>
                 </div>
-                {navItems.map(({ icon: Icon, key }) => (
+                {NAV_ITEMS.map(({ icon: Icon, key }) => (
                   <div
                     key={key}
                     className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sidebar-foreground/70 hover:bg-sidebar-accent/10 transition-colors"

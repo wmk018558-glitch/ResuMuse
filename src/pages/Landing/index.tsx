@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Hero } from "./components/Hero";
 import { StatsBar } from "./components/StatsBar";
 import { AppPeek } from "./components/AppPeek";
-
+import { FeatureGrid } from "./components/FeatureGrid";
 export default function LandingPage() {
   const { t } = useTranslation();
 
@@ -11,18 +11,7 @@ export default function LandingPage() {
       <Hero />
       <StatsBar />
       <AppPeek />
-
-      {/* Features Section */}
-      <section id="features" className="py-20">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            {t("landing:features_placeholder")}
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* 功能卡片 */}
-          </div>
-        </div>
-      </section>
+      <FeatureGrid />
 
       {/* How It Works Section */}
       <section id="how-it-works" className="py-20 bg-muted/50">

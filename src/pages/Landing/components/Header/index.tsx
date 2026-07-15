@@ -2,19 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Sparkles, Menu, X, MoveRight } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { LocaleToggle } from "@/components/locale-toggle";
+import { NAV_ITEMS } from "./constants";
 
 export function Header() {
   const { t } = useTranslation();
   const [isOpen, setOpen] = useState(false);
-
-  const navigationItems = [
-    { title: t("landing:nav_home"), href: "#hero" },
-    { title: t("landing:nav_features"), href: "#features" },
-    { title: t("landing:nav_templates"), href: "#templates" },
-    { title: t("landing:nav_pricing"), href: "#pricing" },
-  ];
 
   return (
     <header className="w-full z-40 fixed top-0 left-0 bg-background border-b">
@@ -33,13 +27,13 @@ export function Header() {
 
         {/* Center: Desktop Nav */}
         <nav className="hidden lg:flex items-center justify-center gap-8">
-          {navigationItems.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <a
-              key={item.title}
+              key={item.key}
               href={item.href}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              {item.title}
+              {t(`landing:${item.key}`)}
             </a>
           ))}
         </nav>
@@ -73,14 +67,14 @@ export function Header() {
       {isOpen && (
         <div className="lg:hidden border-t bg-background shadow-lg">
           <div className="container px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4">
-            {navigationItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <a
-                key={item.title}
+                key={item.key}
                 href={item.href}
                 className="flex justify-between items-center text-lg py-2"
                 onClick={() => setOpen(false)}
               >
-                <span>{item.title}</span>
+                <span>{t(`landing:${item.key}`)}</span>
                 <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
               </a>
             ))}

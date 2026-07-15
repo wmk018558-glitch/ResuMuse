@@ -1,29 +1,9 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { NAV_GROUPS } from "./constants";
 
 export function Footer() {
   const { t } = useTranslation();
-
-  const navigationItems = [
-    {
-      title: t("footer:product"),
-      items: [
-        { title: "Reports", href: "/reports" },
-        { title: "Statistics", href: "/statistics" },
-        { title: "Dashboards", href: "/dashboards" },
-        { title: "Recordings", href: "/recordings" },
-      ],
-    },
-    {
-      title: t("footer:company"),
-      items: [
-        { title: "About us", href: "/about" },
-        { title: "Fundraising", href: "/fundraising" },
-        { title: "Investors", href: "/investors" },
-        { title: "Contact us", href: "/contact" },
-      ],
-    },
-  ];
 
   return (
     <div className="w-full py-20 lg:py-40 bg-background text-foreground border-t">
@@ -51,25 +31,24 @@ export function Footer() {
             </div>
           </div>
           <div className="grid lg:grid-cols-3 gap-10 items-start">
-            {navigationItems.map((item) => (
+            {NAV_GROUPS.map((group) => (
               <div
-                key={item.title}
+                key={group.titleKey}
                 className="flex text-base gap-1 flex-col items-start"
               >
                 <div className="flex flex-col gap-2">
-                  <p className="text-xl">{item.title}</p>
-                  {item.items &&
-                    item.items.map((subItem) => (
-                      <Link
-                        key={subItem.title}
-                        to={subItem.href}
-                        className="flex justify-between items-center"
-                      >
-                        <span className="text-gray-400">
-                          {subItem.title}
-                        </span>
-                      </Link>
-                    ))}
+                  <p className="text-xl">{t(group.titleKey)}</p>
+                  {group.items.map((subItem) => (
+                    <Link
+                      key={subItem.title}
+                      to={subItem.href}
+                      className="flex justify-between items-center"
+                    >
+                      <span className="text-gray-400">
+                        {subItem.title}
+                      </span>
+                    </Link>
+                  ))}
                 </div>
               </div>
             ))}

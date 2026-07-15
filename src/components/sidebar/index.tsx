@@ -5,21 +5,12 @@ import { Button } from '@/components/ui/button'
 import { useTheme } from '@/components/theme-provider'
 import {
   Sparkles,
-  FileText,
-  FolderKanban,
-  MessageSquare,
   Sun,
   Moon,
   ChevronLeft,
 } from 'lucide-react'
 import { useState } from 'react'
-
-const navItems = [
-  { to: '/', icon: Sparkles, label: 'smart_generate' },
-  { to: '/templates', icon: FileText, label: 'templates' },
-  { to: '/resumes', icon: FolderKanban, label: 'my_resumes' },
-  { to: '/chat', icon: MessageSquare, label: 'ai_chat' },
-]
+import { NAV_ITEMS } from './constants'
 
 export function Sidebar() {
   const { t } = useTranslation()
@@ -43,7 +34,7 @@ export function Sidebar() {
 
       {/* Nav */}
       <nav className="flex-1 space-y-1 p-2">
-        {navItems.map((item) => (
+        {NAV_ITEMS.map((item) => (
           <NavLink key={item.to} to={item.to} end={item.to === '/'}>
             {({ isActive }) => (
               <Button
