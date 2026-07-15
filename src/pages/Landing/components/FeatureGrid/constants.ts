@@ -14,7 +14,7 @@ export const containerVariants: Variants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.06,
       delayChildren: 0.2,
     },
   },
@@ -26,6 +26,6 @@ export const cardVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" as const },
+    transition: { duration: 0.3, ease: "easeOut" as const },
   },
 };

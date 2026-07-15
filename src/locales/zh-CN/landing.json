@@ -35,5 +35,15 @@
   "feature_interview_title": "面试题智能生成",
   "feature_interview_desc": "基于你的真实简历，生成行为题、产品题、策略题、技术题，并给出有据可查的参考回答。",
   "feature_version_title": "多版本管理",
-  "feature_version_desc": "为不同岗位保存多个简历变体，查看任意两版之间的 Diff，随时回溯，投递不同赛道更自信。"
+  "feature_version_desc": "为不同岗位保存多个简历变体，查看任意两版之间的 Diff，随时回溯，投递不同赛道更自信。",
+  "step_badge": "四步闭环",
+  "step_title": "从上传到 Offer，全程 AI 陪跑",
+  "step_01_title": "导入简历",
+  "step_01_desc": "上传 PDF / Word，或粘贴 LinkedIn 链接。AI 在 10 秒内完成结构化解析。",
+  "step_02_title": "AI 深度优化",
+  "step_02_desc": "对话式 AI 给出逐条建议，重写 Bullet、补强关键词、提升量化表达。",
+  "step_03_title": "匹配目标岗位",
+  "step_03_desc": "输入 JD，获得匹配分 + 差距地图 + 优先级改写清单。针对每个岗位定制简历。",
+  "step_04_title": "准备面试，信心出发",
+  "step_04_desc": "AI 基于你的真实经历生成定制面试题，附参考回答，模拟真实面试场景。"
 }

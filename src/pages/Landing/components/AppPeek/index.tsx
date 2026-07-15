@@ -12,7 +12,7 @@ export function AppPeek() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 6, duration: 0.7, ease: "easeOut" }}
+          transition={{ delay: 3.8, duration: 0.4, ease: "easeOut" }}
           className="relative mx-auto max-w-4xl"
         >
           {/* Browser chrome */}

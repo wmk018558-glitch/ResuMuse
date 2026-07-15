@@ -7,7 +7,7 @@ export const FeatureGrid = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="w-full py-20 lg:py-40">
+    <section className="w-full pt-20 lg:pt-40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-10">
           {/* Section header */}
@@ -20,7 +20,7 @@ export const FeatureGrid = () => {
               show: {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.6, ease: "easeOut" as const },
+                transition: { duration: 0.35, ease: "easeOut" as const },
               },
             }}
             className="flex gap-4 flex-col items-center"
@@ -100,4 +100,4 @@ export const FeatureGrid = () => {
       </div>
     </section>
   );
-}
+};
