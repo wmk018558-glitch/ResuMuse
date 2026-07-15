@@ -3,6 +3,7 @@ import { Hero } from "./components/Hero";
 import { StatsBar } from "./components/StatsBar";
 import { AppPeek } from "./components/AppPeek";
 import { FeatureGrid } from "./components/FeatureGrid";
+import { Step } from "./components/Step";
 export default function LandingPage() {
   const { t } = useTranslation();
 
@@ -13,17 +14,7 @@ export default function LandingPage() {
       <AppPeek />
       <FeatureGrid />
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            {t("landing:section_how_it_works")}
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* 步骤卡片 */}
-          </div>
-        </div>
-      </section>
+      <Step />
 
       {/* Templates Section */}
       <section id="templates" className="py-20">

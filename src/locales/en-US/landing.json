@@ -35,5 +35,15 @@
   "feature_interview_title": "Interview Questions Generator",
   "feature_interview_desc": "Generate behavioral, product, strategy, and technical questions from your actual resume, with well-sourced reference answers.",
   "feature_version_title": "Multi-Version Management",
-  "feature_version_desc": "Save multiple resume variants for different roles, diff any two versions, roll back anytime — apply with confidence."
+  "feature_version_desc": "Save multiple resume variants for different roles, diff any two versions, roll back anytime — apply with confidence.",
+  "step_badge": "4-Step Workflow",
+  "step_title": "From Upload to Offer, AI-Powered Journey",
+  "step_01_title": "Import Resume",
+  "step_01_desc": "Upload PDF / Word, or paste your LinkedIn link. AI completes structured parsing in 10 seconds.",
+  "step_02_title": "AI Deep Optimization",
+  "step_02_desc": "Conversational AI gives suggestions line by line — rewrite bullets, strengthen keywords, boost quantified expressions.",
+  "step_03_title": "Match Target Jobs",
+  "step_03_desc": "Enter a JD to get match score + gap map + prioritized rewrite checklist. Customize your resume for every role.",
+  "step_04_title": "Prepare for Interview, Go Confidently",
+  "step_04_desc": "AI generates tailored interview questions based on your real experience, with reference answers and mock interview scenarios."
 }
