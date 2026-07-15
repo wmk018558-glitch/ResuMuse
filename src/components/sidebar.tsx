@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/components/theme-provider'
@@ -14,13 +15,14 @@ import {
 import { useState } from 'react'
 
 const navItems = [
-  { to: '/', icon: Sparkles, label: '智能生成' },
-  { to: '/templates', icon: FileText, label: '简历模板' },
-  { to: '/resumes', icon: FolderKanban, label: '我的简历' },
-  { to: '/chat', icon: MessageSquare, label: 'AI 对话' },
+  { to: '/', icon: Sparkles, label: 'smart_generate' },
+  { to: '/templates', icon: FileText, label: 'templates' },
+  { to: '/resumes', icon: FolderKanban, label: 'my_resumes' },
+  { to: '/chat', icon: MessageSquare, label: 'ai_chat' },
 ]
 
 export function Sidebar() {
+  const { t } = useTranslation()
   const [collapsed, setCollapsed] = useState(false)
   const { theme, setTheme } = useTheme()
 
@@ -35,7 +37,7 @@ export function Sidebar() {
       <div className="flex h-14 items-center gap-2 border-b px-4">
         <Sparkles className="h-6 w-6 text-sidebar-accent shrink-0" />
         {!collapsed && (
-          <span className="font-bold text-sm truncate">AI 简历工作台</span>
+          <span className="font-bold text-sm truncate">{t("sidebar:workspace_title")}</span>
         )}
       </div>
 
@@ -53,7 +55,7 @@ export function Sidebar() {
                 )}
               >
                 <item.icon className="h-5 w-5 shrink-0" />
-                {!collapsed && <span>{item.label}</span>}
+                {!collapsed && <span>{t(`sidebar:${item.label}`)}</span>}
               </Button>
             )}
           </NavLink>
@@ -68,7 +70,7 @@ export function Sidebar() {
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
         >
           {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          {!collapsed && <span>切换主题</span>}
+          {!collapsed && <span>{t("sidebar:toggle_theme")}</span>}
         </Button>
         <Button
           variant="sidebar"
@@ -76,7 +78,7 @@ export function Sidebar() {
           onClick={() => setCollapsed(!collapsed)}
         >
           <ChevronLeft className={cn('h-5 w-5 transition-transform', collapsed && 'rotate-180')} />
-          {!collapsed && <span>收起</span>}
+          {!collapsed && <span>{t("sidebar:collapse")}</span>}
         </Button>
       </div>
     </aside>

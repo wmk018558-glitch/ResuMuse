@@ -1,17 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Sparkles, Menu, X, MoveRight } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-
-const navigationItems = [
-  { title: "首页", href: "#hero", description: "" },
-  { title: "功能", href: "#features", description: "" },
-  { title: "模板", href: "#templates", description: "" },
-  { title: "定价", href: "#pricing", description: "" },
-];
+import { LocaleToggle } from "@/components/locale-toggle";
 
 export function Header() {
+  const { t } = useTranslation();
   const [isOpen, setOpen] = useState(false);
+
+  const navigationItems = [
+    { title: t("landing:nav_home"), href: "#hero" },
+    { title: t("landing:nav_features"), href: "#features" },
+    { title: t("landing:nav_templates"), href: "#templates" },
+    { title: t("landing:nav_pricing"), href: "#pricing" },
+  ];
 
   return (
     <header className="w-full z-40 fixed top-0 left-0 bg-background border-b">
@@ -23,7 +26,7 @@ export function Header() {
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <span className="font-bold text-base lg:text-lg whitespace-nowrap">
-              ResuMuse
+              {t("common:app_name")}
             </span>
           </a>
         </div>
@@ -44,17 +47,21 @@ export function Header() {
         {/* Right: Actions */}
         <div className="hidden lg:flex items-center justify-end gap-2">
           <ThemeToggle />
+          <LocaleToggle />
           <Button variant="ghost" className="text-sm font-medium">
-            登录
+            {t("common:login")}
           </Button>
-          <Button className="text-sm font-medium px-5">免费开始</Button>
+          <Button className="text-sm font-medium px-5">
+            {t("common:free_start")}
+          </Button>
         </div>
 
         {/* Mobile: Hamburger */}
         <div className="flex lg:hidden items-center justify-end gap-1">
           <ThemeToggle />
+          <LocaleToggle />
           <Button variant="ghost" size="sm" className="text-sm font-medium">
-            登录
+            {t("common:login")}
           </Button>
           <Button variant="ghost" size="icon" onClick={() => setOpen(!isOpen)}>
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -79,9 +86,11 @@ export function Header() {
             ))}
             <div className="flex flex-col gap-3 pt-4 border-t">
               <Button variant="outline" className="w-full">
-                登录
+                {t("common:login")}
               </Button>
-              <Button className="w-full">免费开始</Button>
+              <Button className="w-full">
+                {t("common:free_start")}
+              </Button>
             </div>
           </div>
         </div>
