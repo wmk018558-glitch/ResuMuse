@@ -7,12 +7,12 @@
   "nav_home": "首页",
   "nav_features": "功能",
   "nav_templates": "模板",
-  "nav_pricing": "定价",
+
   "section_features": "功能",
   "section_how_it_works": "使用流程",
   "section_templates": "模板",
-  "section_pricing": "定价",
-  "section_faq": "常见问题",
+
+
   "features_placeholder": "这里是功能区域",
   "hero_input_placeholder": "上传你的简历，让 AI 帮你找到最匹配的机会...",
   "hero_supported_formats": "支持 PDF · Word · LinkedIn 导出 · 无需注册即可体验",
