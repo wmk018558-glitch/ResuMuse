@@ -7,7 +7,7 @@ export function AppPeek() {
   const { t } = useTranslation();
   return (
     <section className="overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-landing">
         {/* Preview mockup */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}

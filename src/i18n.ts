@@ -7,6 +7,7 @@ import headerZh from './locales/zh-CN/header.json';
 import footerZh from './locales/zh-CN/footer.json';
 import sidebarZh from './locales/zh-CN/sidebar.json';
 import uploadZh from './locales/zh-CN/upload.json';
+import chatZh from './locales/zh-CN/chat.json';
 
 import commonEn from './locales/en-US/common.json';
 import landingEn from './locales/en-US/landing.json';
@@ -14,6 +15,7 @@ import headerEn from './locales/en-US/header.json';
 import footerEn from './locales/en-US/footer.json';
 import sidebarEn from './locales/en-US/sidebar.json';
 import uploadEn from './locales/en-US/upload.json';
+import chatEn from './locales/en-US/chat.json';
 
 const savedLang = typeof window !== 'undefined'
   ? localStorage.getItem('i18nextLng')
@@ -28,6 +30,7 @@ void i18n.use(initReactI18next).init({
       footer: footerZh,
       sidebar: sidebarZh,
       upload: uploadZh,
+      chat: chatZh,
     },
     'en-US': {
       common: commonEn,
@@ -36,9 +39,10 @@ void i18n.use(initReactI18next).init({
       footer: footerEn,
       sidebar: sidebarEn,
       upload: uploadEn,
+      chat: chatEn,
     },
   },
-  ns: ['common', 'landing', 'header', 'footer', 'sidebar', 'upload'],
+  ns: ['common', 'landing', 'header', 'footer', 'sidebar', 'upload', 'chat'],
   defaultNS: 'common',
   lng: savedLang || 'zh-CN',
   fallbackLng: 'zh-CN',

@@ -19,9 +19,9 @@ export function ThemeToggle() {
       className="hover:bg-muted hover:text-inherit  rounded-full"
     >
       {theme === "dark" ? (
-        <Sun className="h-5 w-5" />
+        <Sun className="icon-lg" />
       ) : (
-        <Moon className="h-5 w-5" />
+        <Moon className="icon-lg" />
       )}
     </Button>
   );

@@ -78,9 +78,9 @@ export function ResumeUpload() {
                 {(file.size / 1024).toFixed(1)} KB
               </p>
             </div>
-            <CheckCircle className="h-5 w-5 text-green-500 shrink-0" />
+            <CheckCircle className="icon-lg text-green-500" />
             <Button variant="ghost" size="icon" onClick={removeFile}>
-              <X className="h-4 w-4" />
+              <X className="icon-md" />
             </Button>
           </div>
         )}

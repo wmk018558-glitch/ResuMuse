@@ -45,7 +45,7 @@ export function Sidebar() {
                   isActive && 'bg-sidebar-accent text-sidebar-accent-foreground'
                 )}
               >
-                <item.icon className="h-5 w-5 shrink-0" />
+                <item.icon className="icon-lg" />
                 {!collapsed && <span>{t(`sidebar:${item.label}`)}</span>}
               </Button>
             )}
@@ -60,7 +60,7 @@ export function Sidebar() {
           size={collapsed ? 'icon' : 'default'}
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
         >
-          {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          {theme === 'dark' ? <Sun className="icon-lg" /> : <Moon className="icon-lg" />}
           {!collapsed && <span>{t("sidebar:toggle_theme")}</span>}
         </Button>
         <Button

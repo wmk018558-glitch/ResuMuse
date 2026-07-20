@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Zap } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { SectionHeader } from "@/components/section-header";
 import { FEATURES, containerVariants, cardVariants } from "./constants";
 
 export const FeatureGrid = () => {
@@ -8,38 +9,16 @@ export const FeatureGrid = () => {
 
   return (
     <section className="w-full pt-20 lg:pt-40">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-landing">
         <div className="flex flex-col gap-10">
           {/* Section header */}
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              show: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.35, ease: "easeOut" as const },
-              },
-            }}
-            className="flex gap-4 flex-col items-center"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-sm mx-auto">
-              <Zap size={14} className="text-blue-500" />
-              <span className="text-xs text-muted-foreground/90 text-center">
-                {t("landing:features_badge")}
-              </span>
-            </div>
-            <div className="flex gap-2 flex-col items-center text-center">
-              <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular text-foreground">
-                {t("landing:features_title")}
-              </h2>
-              <p className="text-lg max-w-xl lg:max-w-lg leading-relaxed tracking-tight text-muted-foreground">
-                {t("landing:features_desc")}
-              </p>
-            </div>
-          </motion.div>
+          <SectionHeader
+            icon={Zap}
+            iconColor="text-blue-500"
+            badgeText={t("landing:features_badge")}
+            title={t("landing:features_title")}
+            description={t("landing:features_desc")}
+          />
 
           {/* Cards grid with staggered animation */}
           <motion.div
