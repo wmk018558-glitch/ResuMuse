@@ -1,0 +1,63 @@
+/* ── Sidebar: self-contained elements (no CVA/Tailwind component conflict) ── */
+
+/* Sidebar aside */
+.sidebar {
+  @apply flex flex-col h-full w-72 shrink-0 border-r;
+  background-image: linear-gradient(to bottom, #eff6ff, #ffffff, #eff6ff);
+}
+:global(.dark) .sidebar {
+  background-image: linear-gradient(to bottom, #0f1119, #111318, #0f1119);
+}
+
+/* Logo link */
+.logoLink {
+  @apply flex items-center justify-center gap-2.5 h-12 px-4 mt-4 transition-colors shrink-0;
+}
+
+/* New chat button */
+.newChatBtn {
+  @apply w-full flex items-center justify-center gap-2 px-5 h-[60px] rounded-3xl
+         bg-gradient-to-r from-purple-600 to-blue-500
+         text-white text-base font-semibold
+         transition-all duration-200
+         active:scale-[0.99];
+  box-shadow: 0 4px 6px -1px rgba(168, 85, 247, 0.25);
+}
+.newChatBtn:hover {
+  box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.35);
+}
+:global(.dark) .newChatBtn {
+  box-shadow: 0 4px 6px -1px rgba(168, 85, 247, 0.15);
+}
+:global(.dark) .newChatBtn:hover {
+  box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.2);
+}
+
+/* Search wrapper */
+.searchWrap {
+  @apply px-3 py-1.5 shrink-0;
+}
+
+/* Conversation list area */
+.convList {
+  @apply flex-1 overflow-hidden;
+}
+
+/* Footer */
+.footer {
+  @apply shrink-0 border-t px-2 py-2;
+}
+
+/* ── Classes that DON'T conflict with UI components ── */
+
+/* Search icon positioning */
+.searchIcon {
+  @apply absolute left-3 top-1/2 -translate-y-1/2 icon-md text-muted-foreground;
+}
+
+/* Search clear button */
+.clearBtn {
+  @apply absolute right-2.5 top-1/2 -translate-y-1/2 h-4 w-4
+         inline-flex items-center justify-center
+         text-muted-foreground hover:text-foreground transition-colors;
+}

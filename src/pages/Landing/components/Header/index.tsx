@@ -1,13 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Menu, X, MoveRight } from "lucide-react";
+import { Menu, X, MoveRight } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LocaleToggle } from "@/components/locale-toggle";
+import { BrandLogo } from "@/components/brand-logo";
 import { NAV_ITEMS } from "./constants";
 
 export function Header() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -16,9 +19,7 @@ export function Header() {
         {/* Left: Logo */}
         <div className="flex justify-start items-center gap-2">
           <a href="#" className="flex items-center gap-2 shrink-0">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-white" />
-            </div>
+            <BrandLogo />
             <span className="font-bold text-base lg:text-lg whitespace-nowrap">
               {t("common:app_name")}
             </span>
@@ -45,7 +46,10 @@ export function Header() {
           <Button variant="ghost" className="text-sm font-medium">
             {t("common:login")}
           </Button>
-          <Button className="text-sm font-medium px-5">
+          <Button
+            className="text-sm font-medium px-5"
+            onClick={() => navigate("/chat")}
+          >
             {t("common:free_start")}
           </Button>
         </div>
@@ -82,7 +86,7 @@ export function Header() {
               <Button variant="outline" className="w-full">
                 {t("common:login")}
               </Button>
-              <Button className="w-full">
+              <Button className="w-full" onClick={() => { setOpen(false); navigate("/chat"); }}>
                 {t("common:free_start")}
               </Button>
             </div>

@@ -1,5 +1,6 @@
 import { ArrowRight, ChevronRight, Upload } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState, useEffect } from "react";
@@ -9,6 +10,7 @@ import styles from "./index.module.css";
 
 export function Hero() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [inputVal, setInputVal] = useState("");
 
   useEffect(() => {
@@ -78,7 +80,10 @@ export function Hero() {
               className="flex-1 bg-transparent border-0 shadow-none text-sm outline-none placeholder:text-muted-foreground/50 focus-visible:ring-0"
             />
             <motion.div initial="hidden" animate="show" variants={slideLeft} transition={{ delay: 2.4 }}>
-              <Button className="gap-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-600 hover:to-blue-600 shadow-lg shrink-0">
+              <Button
+                className="gap-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-600 hover:to-blue-600 shadow-lg shrink-0"
+                onClick={() => navigate("/chat")}
+              >
                 {t("landing:hero_cta")}
                 <ArrowRight size={14} />
               </Button>
